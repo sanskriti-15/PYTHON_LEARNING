@@ -77,12 +77,28 @@ print(mySet)
 # ✔ Set operations (Very fast for membership)
 print(mySet & {2, 3, 4, 5})  # Intersection → {2,3,4,5}
 print(mySet | {2, 3, 4, 5})  # Union → {1,2,3,4,5}
-print(mySet - {2, 3, 4, 5})  # Difference → {1,5}
-print(mySet ^ {2, 3, 4, 5})  # Symmetric diff → {1,5}
+print(mySet - {2, 3, 4, 5})  # Difference → {1}
+print(mySet ^ {2, 3, 4, 5})  # Symmetric diff → {1}
+# All elements that are NOT common between the sets
+# (i.e., elements that exist in only one of the sets)
 
-# ✔ Subset / Superset checking:
-print(mySet <= {1,2,3,4,5})  # True → mySet is subset
-print(mySet >= {1,2,3,4,5})  # True → mySet is superset
+
+# ✔ Subset and Superset are Set Relationship Operators in Python
+
+mySet = {1, 2, 3, 4, 5}
+
+print(mySet <= {1, 2, 3, 4, 5})  
+# True → Every element of mySet exists inside the second set
+# ✔ Therefore, mySet is a SUBSET of {1,2,3,4,5}
+
+
+print(mySet >= {1, 2, 3, 4, 5})
+# True → The second set is fully inside mySet
+# ✔ Therefore, mySet is also a SUPERSET of {1,2,3,4,5}
+
 
 # ✔ Empty curly braces {} is NOT a set → it is a dictionary
 print(type({}))  # <class 'dict'>
+
+emptySet = set()  
+print(type(emptySet))  # <class 'set'>
