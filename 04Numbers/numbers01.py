@@ -23,26 +23,6 @@ print(True is 1)     # False → different identity (memory reference)
 # Avoid math with True/False, it looks confusing
 print(True + 4)  # Output: 5  (not recommended)
 
-# =====================================================================
-# 🪞 repr(), str(), print() — FULL COMMENT EXPLANATION
-# =====================================================================
-
-x = 'Hello, World!'
-
-# repr() → Developer view: unambiguous, shows quotes, escape chars
-print(repr(x))  
-# Output: "'Hello, World!'"
-
-# str() → User-friendly readable view
-print(str(x))   
-# Output: Hello, World!
-
-# print() → Displays using str() internally
-print(x)       
-# Output: Hello, World!
-
-# ✔ repr() helps debugging
-# ✔ str() helps clean user output
 
 # =====================================================================
 # 📦 IMPORTING MATH MODULE — IMPORTANT NUMBER FUNCTIONS
@@ -56,6 +36,7 @@ print(math.floor(-5.55))  # -6 (moves downwards)
 
 # trunc() → Remove decimals → moves toward zero
 print(math.trunc(-5.55))  # -5
+print(math.trunc(5.45))   # 5
 
 # ceil() → Round up to nearest number
 print(math.ceil(5.55))    # 6

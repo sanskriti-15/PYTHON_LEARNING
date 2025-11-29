@@ -19,72 +19,6 @@ print(result)  # 10 + 3*4 = 10 + 12 = 22
 
 
 # =====================================================================
-# 🔁 OPERATOR BEHAVIOR NOTES
-# =====================================================================
-
-# ==  → Checks VALUE equality
-# =   → Assignment operator
-# is  → Checks OBJECT ID (same memory reference)
-
-# Good example:
-a = 10
-b = 10
-print(a == b)  # True ✔ both values same
-print(a is b)  # True ✔ both reference same (because small int cached)
-
-# ❗Misconception fixed:
-# == does NOT check datatype → it only checks value equality
-print(5 == 5.0)  # True (int == float compares values)
-print(type(5), type(5.0))  # Different types
-
-
-# =====================================================================
-# 🔄 OPERATOR OVERLOADING — Python Flexibility
-# =====================================================================
-
-# + operator behaves differently based on datatype
-print(5 + 5)       # 10 (numeric addition)
-print("hello " + "python")  # string concat
-print([1,2] + [3,4]) # list concat
-
-# BUT mismatched types give error:
-# print("name" + 5)  # ❌ TypeError
-
-print(str(5) + "name")  # ✔ Best practice → explicit conversion
-
-
-# =====================================================================
-# 🔢 BOOLEAN — Internal Numeric Behavior
-# =====================================================================
-
-print(True, False)
-print(True + True)  # 1 + 1 = 2 ✔
-print(False + True) # 0 + 1 = 1 ✔
-
-# Valid comparisons using boolean
-print(True == 1)  # True (same numeric value)
-print(False == 0) # True
-
-# But "is" checks memory → different types
-print(True is 1)  # False
-
-# =====================================================================
-# 🧠 repr(), str(), print() — Difference Fully Explained
-# =====================================================================
-
-x = "Hello, World!"
-
-print(repr(x))  # Developer friendly → shows quotes + escapes
-# Output: "'Hello, World!'"
-
-print(str(x))   # User friendly → readable output
-# Output: Hello, World!
-
-print(x)        # print() uses str() behind the scenes
-
-
-
-# =====================================================================
 # 🔍 NUMBER DATATYPE BEHAVIOR
 # =====================================================================
 
@@ -106,6 +40,8 @@ print(type(num04))
 num05 = (num01, num02, num03, num04)
 print(num05)
 
+num06 = (3+2j)*6
+print(num06)   # 18+12j
 
 # Some important numeric operations
 print(num01 % 25)   # modulus (remainder)
@@ -125,6 +61,73 @@ print(num01 + (num02 * num04))
 
 
 # =====================================================================
+# 🔄 OPERATOR OVERLOADING — Python Flexibility
+# =====================================================================
+
+# + operator behaves differently based on datatype
+print(5 + 5)       # 10 (numeric addition)
+print("hello " + "python")  # string concat
+print([1,2] + [3,4]) # list concat
+
+# BUT mismatched types give error:
+# print("name" + 5)  # ❌ TypeError
+
+print(str(5) + "name")  # ✔ Best practice → explicit conversion
+
+
+# =====================================================================
+# 🧠 repr(), str(), print() — Difference Fully Explained
+# =====================================================================
+
+x = "Hello, World!"
+
+print(repr(x))  # Developer friendly → shows quotes + escapes
+# Output: "'Hello, World!'"
+
+print(str(x))   # User friendly → readable output
+# Output: Hello, World!
+
+print(x)        # print() uses str() behind the scenes
+
+
+# =====================================================================
+# 🔢 BOOLEAN — Internal Numeric Behavior
+# =====================================================================
+
+print(True, False)
+print(True + True)  # 1 + 1 = 2 ✔
+print(False + True) # 0 + 1 = 1 ✔
+
+# Valid comparisons using boolean
+print(True == 1)  # True (same numeric value)
+print(False == 0) # True
+
+# But "is" checks memory → different types
+print(True is 1)  # False
+
+
+# =====================================================================
+# 🔁 OPERATOR BEHAVIOR NOTES
+# =====================================================================
+
+# ==  → Checks VALUE equality
+# =   → Assignment operator
+# is  → Checks OBJECT ID (same memory reference)
+
+# Good example:
+a = 10
+b = 10
+print(a == b)  # True ✔ both values same
+print(a is b)  # True ✔ both reference same (because small int cached)
+
+# ❗Misconception fixed:
+# == does NOT check datatype → it only checks value equality
+print(5 == 5.0)  # True (int == float compares values)
+print(type(5), type(5.0))  # Different types
+
+
+
+# =====================================================================
 # ⚠️ CHAINED COMPARISONS MUST BE USED CAREFULLY
 # =====================================================================
 
@@ -135,7 +138,7 @@ print(1 < 2 < 3)
 print(1 < 2 and 2 < 3)
 
 # ❌ Bad
-print(1 == 2 < 3)
+print(1 == 2 < 3)  # false
 
 # ✔ Good
 print(1 == 2 and 2 < 3)

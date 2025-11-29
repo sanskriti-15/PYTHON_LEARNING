@@ -1,19 +1,3 @@
-# 🧮 OPERATOR PRECEDENCE (VERY IMPORTANT)
-# =====================================================================
-# ORDER OF EXECUTION (Top → Highest Priority)
-#
-# 1️⃣ ()      → Parentheses
-# 2️⃣ **      → Exponent (Power)
-# 3️⃣ *, /, //, % → Multiplication, Division, Floor, Modulus
-# 4️⃣ +, -    → Addition, Subtraction
-# 5️⃣ <, >, <=, >=, ==, != → Comparisons
-# 6️⃣ is, is not → Identity check (memory reference)
-# 7️⃣ and     → Logical AND
-# 8️⃣ or      → Logical OR
-# 9️⃣ =       → Assignment (lowest priority)
-#
-# ✔ ALWAYS use parentheses in complex expressions for clarity
-
 # =====================================================================
 # 8️⃣ OCTAL, HEXADECIMAL & BINARY NUMBERS — Storage Formats
 # =====================================================================
@@ -39,6 +23,9 @@ print(0b1100)  # 12
 print(bin(10))  # → Convert to binary:   0b1010
 print(oct(64))  # → Convert to octal:    0o100
 print(hex(255)) # → Convert to hex:      0xff
+
+print(int('64',8))   # → Convert 64 to base 8 i.e oct
+print(int('64',16))   # → Convert 64 to base 16 i.e hex
 
 # =====================================================================
 # ⚙️ BITWISE OPERATORS — Work on bits (Binary digits)
@@ -70,12 +57,15 @@ from decimal import Decimal
 print(Decimal('0.1') + Decimal('0.1') + Decimal('0.1') - Decimal('0.3'))
 # Output: 0  → CORRECT ✔
 
+
 # =====================================================================
 # ➗ FRACTIONS — Exact Rational Arithmetic (No precision loss)
 # =====================================================================
 
 from fractions import Fraction
 print(Fraction(1, 3))  # → 1/3 exactly ✔
+
+
 
 # =====================================================================
 # 🔷 SET DATA TYPE — Unique & Unordered Collection
@@ -96,4 +86,3 @@ print(mySet >= {1,2,3,4,5})  # True → mySet is superset
 
 # ✔ Empty curly braces {} is NOT a set → it is a dictionary
 print(type({}))  # <class 'dict'>
-print
