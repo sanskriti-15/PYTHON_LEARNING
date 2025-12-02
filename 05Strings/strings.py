@@ -43,6 +43,7 @@ print(username[4:8])   # 'Doe'
 num_string = "0123456789"
 print(num_string[0:9:2])  # 02468  → every 2nd character
 print(num_string[::2])    # 02468
+print(num_string[0:9:-2])  # You want me to go backward from the first element?? Sorry, no elements available to travel!
 print(num_string[::-1])   # Reverse string → 9876543210
 print(num_string[:7:3])   # 036
 print(num_string[1::3])   # 147
