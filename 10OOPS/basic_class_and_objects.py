@@ -1,41 +1,48 @@
 # =====================================================================
-# 📘 CLASS IN PYTHON — BLUEPRINT FOR CREATING OBJECTS
+# 📌BASIC CLASS & OBJECT IN PYTHON
 # =====================================================================
-# ✔ Class contains Attributes + Methods
-# ✔ Object is an instance created from a Class
-# ✔ __init__() works as a constructor → initializes object variables
-# ✔ self refers to the current object (context of object instance)
+# ✔ class → Blueprint/template to create objects
+# ✔ object/instance → Real world entity created from class
+# ✔ __init__() → Constructor → Automatically runs when object is created
+# ✔ self → Refers to the current object (used to access attributes)
 # =====================================================================
 
 
-class user_login:
+class Car:
+    # ---------------------------------------------------------------
+    # __init__ method → initializes object attributes at creation time
+    # self.brand and self.model are INSTANCE VARIABLES
+    # They are different for every object created
+    # ---------------------------------------------------------------
+    def __init__(self, brand, model):
+        self.brand = brand   # Storing user value inside object
+        self.model = model   # Storing user value inside object
+        
 
-    # Constructor → runs automatically while creating object
-    def __init__(self, username, email, password):
-        self.username = username    # instance attribute
-        self.email = email
-        self.password = password
-
-    # Method → uses object data through `self`
-    def hashed_password(self):
-        return f"{self.password}#$%^&"    # fake hashing for demo
-
-    def username_uppercase(self):
-        return self.username.upper()
-
-
-# Creating an object → calling constructor
-login = user_login("john", "john@me.com", "1234")
-
-print(login.username)        # accessing attribute
-print(login.email)
-print(login.password)
-print(login.hashed_password())     # calling method
-print(login.username_uppercase())
+# ---------------------------------------------------------------
+# Creating first object of Car class
+# Object has its own brand + model values
+# ---------------------------------------------------------------
+my_car = Car("Toyota", "Camry")
+print(my_car.brand)   # Output: Toyota
+print(my_car.model)   # Output: Camry
 print("\n")
 
 
-# Checking types
-print(type(login))           # <class '__main__.user_login'>
-print(type(login.username))  # <class 'str'>
-print("\n")
+# ---------------------------------------------------------------
+# Creating second object → totally separate from first object
+# Shows different data for different instances
+# ---------------------------------------------------------------
+my_new_car = Car("Ford", "Mustang")
+print(my_new_car.brand)   # Output: Ford
+print(my_new_car.model)   # Output: Mustang
+
+
+# =====================================================================
+# FINAL NOTES (write in notebook)
+# =====================================================================
+# ✔ class defines structure → object stores actual data
+# ✔ __init__ automatically runs when object is created
+# ✔ self connects attributes to the current object
+# ✔ Each object has independent data stored in separate memory
+# =====================================================================
