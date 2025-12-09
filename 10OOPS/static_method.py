@@ -23,7 +23,7 @@ class Car:
         return self.__brand
     
 
-    # 🚀 STATIC METHOD
+    # 🚀 STATIC METHOD  (self is not written)
     @staticmethod
     def general_description():
         return "Cars are prime transport vehicles."
@@ -32,8 +32,8 @@ class Car:
 # Creating object
 myCar = Car("Toyota", "Camry")
 
-print(myCar.general_description())  # ✔ Called using object
-print(Car.general_description())    # ✔ Called using class
+print(myCar.general_description())  # Allowed ✔ (not recommended)
+print(Car.general_description())    # Recommended ✔✔✔
 
 
 
